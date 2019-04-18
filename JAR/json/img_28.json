@@ -1,0 +1,20 @@
+{
+    "views": [
+        {
+            "view": "imageView",
+            "id": "imageView_1",
+            "start_percent": "6",
+            "top_percent": "10",
+            "end_percent": "78",
+            "bottom_percent": "44"
+        },
+        {
+            "view": "textView",
+            "id": "textView_1",
+            "start_percent": "27",
+            "top_percent": "12",
+            "end_percent": "73",
+            "bottom_percent": "31"
+        }
+    ]
+}

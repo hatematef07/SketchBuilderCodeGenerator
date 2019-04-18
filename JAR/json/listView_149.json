@@ -1,0 +1,108 @@
+{
+    "views": [
+        {
+            "view": "button",
+            "id": "button_1",
+            "start_percent": "68",
+            "top_percent": "65",
+            "end_percent": "87",
+            "bottom_percent": "74"
+        },
+        {
+            "view": "checkBox_on",
+            "id": "checkBox_on_1",
+            "start_percent": "68",
+            "top_percent": "78",
+            "end_percent": "76",
+            "bottom_percent": "85"
+        },
+        {
+            "view": "checkBox_off",
+            "id": "checkBox_off_2",
+            "start_percent": "79",
+            "top_percent": "78",
+            "end_percent": "87",
+            "bottom_percent": "84"
+        },
+        {
+            "view": "comboBox",
+            "id": "comboBox_1",
+            "start_percent": "16",
+            "top_percent": "41",
+            "end_percent": "63",
+            "bottom_percent": "51"
+        },
+        {
+            "view": "editText",
+            "id": "editText_1",
+            "start_percent": "14",
+            "top_percent": "79",
+            "end_percent": "31",
+            "bottom_percent": "91"
+        },
+        {
+            "view": "imageView",
+            "id": "imageView_1",
+            "start_percent": "67",
+            "top_percent": "40",
+            "end_percent": "87",
+            "bottom_percent": "59"
+        },
+        {
+            "view": "listView",
+            "id": "listView_1",
+            "start_percent": "1",
+            "top_percent": "13",
+            "end_percent": "113",
+            "bottom_percent": "36"
+        },
+        {
+            "view": "progressBar",
+            "id": "progressBar_1",
+            "start_percent": "17",
+            "top_percent": "53",
+            "end_percent": "62",
+            "bottom_percent": "62"
+        },
+        {
+            "view": "radioButton_on",
+            "id": "radioButton_on_1",
+            "start_percent": "55",
+            "top_percent": "63",
+            "end_percent": "63",
+            "bottom_percent": "75"
+        },
+        {
+            "view": "radioButton_off",
+            "id": "radioButton_off_2",
+            "start_percent": "46",
+            "top_percent": "65",
+            "end_percent": "52",
+            "bottom_percent": "74"
+        },
+        {
+            "view": "slidBar",
+            "id": "slidBar_1",
+            "start_percent": "16",
+            "top_percent": "68",
+            "end_percent": "43",
+            "bottom_percent": "73"
+        },
+        {
+            "view": "switch",
+            "id": "switch_1",
+            "start_percent": "72",
+            "top_percent": "86",
+            "end_percent": "87",
+            "bottom_percent": "91"
+        },
+        {
+            "view": "textView",
+            "id": "textView_1",
+            "start_percent": "36",
+            "top_percent": "78",
+            "end_percent": "61",
+            "bottom_percent": "91"
+        }
+    ]
+}

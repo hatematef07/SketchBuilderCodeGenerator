@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+	<android.support.constraint.Guideline
+	android:id="@+id/imageView_1_start_guideline"
+	app:layout_constraintGuide_percent="0.06"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="vertical">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/imageView_1_end_guideline"
+	app:layout_constraintGuide_percent="0.78"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="vertical">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/imageView_1_top_guideline"
+	app:layout_constraintGuide_percent="0.1"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="horizontal">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/imageView_1_bottom_guideline"
+	app:layout_constraintGuide_percent="0.44"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="horizontal">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/textView_1_start_guideline"
+	app:layout_constraintGuide_percent="0.27"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="vertical">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/textView_1_end_guideline"
+	app:layout_constraintGuide_percent="0.73"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="vertical">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/textView_1_top_guideline"
+	app:layout_constraintGuide_percent="0.12"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="horizontal">
+	</android.support.constraint.Guideline>
+	<android.support.constraint.Guideline
+	android:id="@+id/textView_1_bottom_guideline"
+	app:layout_constraintGuide_percent="0.31"
+	android:layout_width="0dp"
+	android:layout_height="0dp"
+	android:orientation="horizontal">
+	</android.support.constraint.Guideline>
+</merge>

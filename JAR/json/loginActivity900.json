@@ -1,0 +1,44 @@
+{
+    "views": [
+        {
+            "view": "button",
+            "id": "button_1",
+            "start_percent": "66",
+            "top_percent": "88",
+            "end_percent": "89",
+            "bottom_percent": "95"
+        },
+        {
+            "view": "button",
+            "id": "button_2",
+            "start_percent": "22",
+            "top_percent": "88",
+            "end_percent": "46",
+            "bottom_percent": "95"
+        },
+        {
+            "view": "editText",
+            "id": "editText_1",
+            "start_percent": "30",
+            "top_percent": "70",
+            "end_percent": "92",
+            "bottom_percent": "84"
+        },
+        {
+            "view": "editText",
+            "id": "editText_2",
+            "start_percent": "29",
+            "top_percent": "49",
+            "end_percent": "92",
+            "bottom_percent": "66"
+        },
+        {
+            "view": "imageView",
+            "id": "imageView_1",
+            "start_percent": "48",
+            "top_percent": "21",
+            "end_percent": "73",
+            "bottom_percent": "41"
+        }
+    ]
+}
