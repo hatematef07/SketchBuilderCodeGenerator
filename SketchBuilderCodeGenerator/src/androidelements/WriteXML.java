@@ -5,44 +5,63 @@ import com.google.gson.Gson;
 import languagewrite.Attribute;
 import languagewrite.Tag;
 import languagewrite.WriteMarkup;
+import server.Client;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class WriteXML {
+public class WriteXML{
 
     private static String path;
     private static String inputPath;
+    private static String outputPath;
     private static String filename;
+    private static File outputFile;
+    public static String image;
     private static String mainDesign = "design";
     private static String guideDesign = "guideline";
     private static String OS = System.getProperty("os.name").toLowerCase();
 
-    public WriteXML(String[] args) {
-        for(int i = 0; i < args.length; i++) {
+    public WriteXML(String[] args, Client client) {
+        for (int i = 0; i < args.length; i++) {
             inputPath = args[i];
+            i++;
+            outputPath = args[i];
             File file = new File(inputPath);
-            if(file.isDirectory()) {
-                folderMiner(file);
+            outputFile = new File(outputPath);
+            if (file.isDirectory() && outputFile.isDirectory()) {
+                folderMiner(file, client);
+            } else if (!outputFile.isDirectory()) {
+                System.out.println("Output path is not a folder!");
+                try {
+                    client.setOut(String.valueOf(400));
+                } catch(IOException e) {
+                    System.out.println(e);
+                }
+                System.exit(0);
             } else {
-                fileMiner(file);
+                fileMiner(file, client);
+            }
+        }
+        try {
+            client.setOut(String.valueOf(200));
+        } catch(IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    private static void folderMiner(File file, Client client) {
+        for (File fileEntry : file.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                folderMiner(fileEntry, client);
+            } else {
+                fileMiner(fileEntry, client);
             }
         }
     }
 
-    private static void folderMiner(File file) {
-        for(File fileEntry : file.listFiles()) {
-            if(fileEntry.isDirectory()) {
-                folderMiner(fileEntry);
-            } else {
-                fileMiner(fileEntry);
-            }
-        }
-    }
-
-    private static void fileMiner(File file) {
+    private static void fileMiner(File file, Client client) {
         path = file.getPath();
         int index = 0;
         if (OS.contains("win")) {
@@ -51,13 +70,12 @@ public class WriteXML {
             index = path.lastIndexOf("/");
         }
         filename = path.substring(index + 1).replaceAll(".json", "");
-        System.out.println("\nFile path: " + path);
-        if(path != null) {
+        if (path != null) {
             try {
                 // Read json file content into a string
                 String content = new String(Files.readAllBytes(Paths.get(path)));
 
-                if(content.contains("\"views\": [")) {
+                if (content.contains("\"views\": [")) {
                     // Convert json content to java object
                     Gson gson = new Gson();
                     JSONModel children = gson.fromJson(content, JSONModel.class);
@@ -67,6 +85,11 @@ public class WriteXML {
                 }
             } catch (IOException e) {
                 System.out.println(e);
+                try {
+                    client.setOut(String.valueOf(400));
+                } catch(IOException ex) {
+                    System.out.println(ex);
+                }
                 System.exit(0);
             }
         }
@@ -105,11 +128,11 @@ public class WriteXML {
 
     private static void addChildren(JSONModel[] children, Tag root, boolean isGuideline) {
 
-        for(JSONModel child : children) {
+        for (JSONModel child : children) {
             String view = child.getView();
-            if(view.equalsIgnoreCase("Button")) {
+            if (view.equalsIgnoreCase("Button")) {
                 AndroidButton button = new AndroidButton(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         button.draw(root);
                         break;
@@ -117,9 +140,9 @@ public class WriteXML {
                         button.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("CheckBox_on")) {
+            } else if (view.equalsIgnoreCase("CheckBox_on")) {
                 AndroidCheckBox checkBoxON = new AndroidCheckBox(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         checkBoxON.setChecked(true);
                         checkBoxON.draw(root);
@@ -128,9 +151,9 @@ public class WriteXML {
                         checkBoxON.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("CheckBox_off")) {
+            } else if (view.equalsIgnoreCase("CheckBox_off")) {
                 AndroidCheckBox checkBoxOFF = new AndroidCheckBox(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         checkBoxOFF.setChecked(false);
                         checkBoxOFF.draw(root);
@@ -139,9 +162,9 @@ public class WriteXML {
                         checkBoxOFF.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("EditText")) {
+            } else if (view.equalsIgnoreCase("EditText")) {
                 AndroidEditText editText = new AndroidEditText(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         editText.draw(root);
                         break;
@@ -149,9 +172,16 @@ public class WriteXML {
                         editText.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("ImageView")) {
+            } else if (view.equalsIgnoreCase("ImageView")) {
                 AndroidImageView imageView = new AndroidImageView(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                File dir = new File(outputFile.getAbsolutePath() + "/XML/drawable");
+                for (File fileEntry : dir.listFiles()) {
+                    if(fileEntry.exists()) {
+                        image = fileEntry.getName().replaceAll(".png", "");
+                    }
+                }
+                imageView.setSrc("@drawable/" + image);
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         imageView.draw(root);
                         break;
@@ -159,9 +189,9 @@ public class WriteXML {
                         imageView.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("ListView")) {
+            } else if (view.equalsIgnoreCase("ListView")) {
                 AndroidListView listView = new AndroidListView(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         listView.draw(root);
                         break;
@@ -169,9 +199,9 @@ public class WriteXML {
                         listView.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("ProgressBar")) {
+            } else if (view.equalsIgnoreCase("ProgressBar")) {
                 AndroidProgressBar progressBar = new AndroidProgressBar(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         progressBar.draw(root);
                         break;
@@ -179,9 +209,9 @@ public class WriteXML {
                         progressBar.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("RadioButton_on")) {
+            } else if (view.equalsIgnoreCase("RadioButton_on")) {
                 AndroidRadioButton radioButtonON = new AndroidRadioButton(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         radioButtonON.setChecked(true);
                         radioButtonON.draw(root);
@@ -190,9 +220,9 @@ public class WriteXML {
                         radioButtonON.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("RadioButton_off")) {
+            } else if (view.equalsIgnoreCase("RadioButton_off")) {
                 AndroidRadioButton radioButtonOFF = new AndroidRadioButton(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         radioButtonOFF.setChecked(false);
                         radioButtonOFF.draw(root);
@@ -201,9 +231,9 @@ public class WriteXML {
                         radioButtonOFF.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("slidBar")) {
+            } else if (view.equalsIgnoreCase("slidBar")) {
                 AndroidSeekBar seekBar = new AndroidSeekBar(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         seekBar.draw(root);
                         break;
@@ -211,9 +241,9 @@ public class WriteXML {
                         seekBar.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("comboBox")) {
+            } else if (view.equalsIgnoreCase("comboBox")) {
                 AndroidSpinner spinner = new AndroidSpinner(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         spinner.draw(root);
                         break;
@@ -221,9 +251,9 @@ public class WriteXML {
                         spinner.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("Switch")) {
+            } else if (view.equalsIgnoreCase("Switch")) {
                 AndroidSwitch iSwitch = new AndroidSwitch(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         iSwitch.draw(root);
                         break;
@@ -231,9 +261,9 @@ public class WriteXML {
                         iSwitch.drawGuideline(root);
                         break;
                 }
-            } else if(view.equalsIgnoreCase("TextView")) {
+            } else if (view.equalsIgnoreCase("TextView")) {
                 AndroidTextView textView = new AndroidTextView(child.getObject());
-                switch(String.valueOf(isGuideline)) {
+                switch (String.valueOf(isGuideline)) {
                     case "false":
                         textView.draw(root);
                         break;
@@ -247,26 +277,27 @@ public class WriteXML {
 
     private static void generateFiles(String file, Tag root, boolean isGuideline) {
         File dir;
-        switch(String.valueOf(isGuideline)) {
+        switch (String.valueOf(isGuideline)) {
             case "false":
-                dir = new File("Design");
-                if(!dir.exists()) {
-                    dir.mkdir();
-                    if(OS.contains("win")) {
+                dir = new File(outputFile.getAbsolutePath() + "/XML/layout");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                    if (OS.contains("win")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                    } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+                        outputFile.listFiles();
+                    } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "/" + file), WriteMarkup.MarkupFormat.XML);
                     }
                 } else {
-                    if(OS.contains("win")) {
+                    if (OS.contains("win")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                    } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+                    } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "/" + file), WriteMarkup.MarkupFormat.XML);
@@ -274,30 +305,30 @@ public class WriteXML {
                 }
                 break;
             case "true":
-                dir = new File("Guideline");
-                if(!dir.exists()) {
-                    dir.mkdir();
-                    if(OS.contains("win")) {
+                dir = new File(outputFile.getAbsolutePath() + "/XML/layout");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                    if (OS.contains("win")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                    } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+                    } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "/" + file), WriteMarkup.MarkupFormat.XML);
                     }
                 } else {
-                    if(OS.contains("win")) {
+                    if (OS.contains("win")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                    } else if(OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+                    } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "/" + file), WriteMarkup.MarkupFormat.XML);
                     }
+                    break;
                 }
-                break;
         }
     }
 }

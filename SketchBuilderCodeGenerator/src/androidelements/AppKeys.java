@@ -22,4 +22,6 @@ public class AppKeys {
     public static final String GUIDELINE_ROOT = "merge";
     public static final String INCLUDE_KEY = "include";
     public static final String LAYOUT_KEY = "layout";
+    public final static String SRC_KEY = "android:src";
+    public final static String SCALE_KEY = "android:scaleType";
 }

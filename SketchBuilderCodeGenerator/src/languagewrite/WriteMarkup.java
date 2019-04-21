@@ -56,35 +56,24 @@ public class WriteMarkup {
     private void getTagData(Tag tag, int level, MarkupFormat format){
         String tabs = getNumberOfTabs(level);
 
-        System.out.print(tabs);
         markupFile.append(tabs);
-        System.out.print(TAG_OPEN_START);
         markupFile.append(TAG_OPEN_START);
         String tagName =  tag.getName();
-
-        System.out.print(tagName);
-
         markupFile.append(tagName);
         List<Attribute> attributes = tag.getAttributes();
         for(int i = 0; i < attributes.size(); ++i){
             if(format == MarkupFormat.HTML) {
                 String attr = " " + attributes.get(i).getName() + "=\"" + attributes.get(i).getValue() + "\"";
-                System.out.print(attr);
-
                 markupFile.append(attr);
             }else if(format == MarkupFormat.XML){
                 String attr = "\n" + tabs + attributes.get(i).getName() + "=\"" + attributes.get(i).getValue() + "\"";
-                System.out.print(attr);
-
                 markupFile.append(attr);
             }
         }
 
         if(tag.getValue() != null && !tag.getValue().equals("")) {
-            System.out.print(TAG_END);
             markupFile.append(TAG_END);
         }else{
-            System.out.print(TAG_END + "\n");
             markupFile.append(TAG_END + "\n");
         }
 
@@ -94,14 +83,12 @@ public class WriteMarkup {
 
         String tagClose;
         if(tag.getValue() != null && !tag.getValue().equals("")){
-            System.out.print(tag.getValue());
             markupFile.append(tag.getValue());
             tagClose = TAG_CLOSE_START + tagName + TAG_END + "\n";
         }else {
             tagClose = tabs + TAG_CLOSE_START + tagName + TAG_END + "\n";
         }
 
-        System.out.print(tagClose);
         markupFile.append(tagClose);
 
     }

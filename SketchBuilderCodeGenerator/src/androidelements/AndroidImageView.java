@@ -6,6 +6,8 @@ import languagewrite.Tag;
 
 public class AndroidImageView extends AndroidElement {
     private final String view = "ImageView";
+    private String src;
+    private final String scaleType = "centerCrop";
 
     public AndroidImageView(JSONModel jsonModel) {
         super(jsonModel.getId(), jsonModel.getStart(), jsonModel.getEnd(), jsonModel.getTop(), jsonModel.getBottom());
@@ -15,12 +17,26 @@ public class AndroidImageView extends AndroidElement {
         return view;
     }
 
+    public void setSrc(String src) {
+        this.src = src;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public String getScaleType() {
+        return scaleType;
+    }
+
     @Override
     public void draw(Tag root) {
         Tag imageView = new Tag(getView());
         imageView.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
         imageView.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
         imageView.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
+        imageView.addAttribute(new Attribute(AppKeys.SRC_KEY, this.getSrc()));
+        imageView.addAttribute(new Attribute(AppKeys.SCALE_KEY, this.getScaleType()));
         imageView.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
         imageView.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
         imageView.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));

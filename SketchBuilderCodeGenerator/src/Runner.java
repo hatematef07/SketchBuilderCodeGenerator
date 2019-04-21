@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import languagewrite.Attribute;
 import languagewrite.Tag;
 import languagewrite.WriteMarkup;
+import server.Client;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,10 +13,22 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Runner {
-
+    public static Client client;
     public static void main(String [] args){
 
-        WriteXML xml = new WriteXML(args);
+        try {
+            client.initializeConnection("localhost", 1234);
+            client.connect();
+        } catch(Exception e) {
+            System.out.println("Error connecting to server");
+            System.exit(0);
+        }
+
+        WriteXML xml = new WriteXML(args, client);
+
+        client.closeConnection();
+
+
 //        Tag html = new Tag("html");
 //        Tag head = new Tag("head");
 //        Tag title = new Tag("title");
