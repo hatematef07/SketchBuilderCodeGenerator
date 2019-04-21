@@ -7,34 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0685f8e2-0cdb-4541-acdf-8058d47d6c66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/comboBox_5_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/d_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/g_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/img_25_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/img_28_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/k_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/listView_149_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/loginActivity1024_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/loginActivity900_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Design/t_design.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/comboBox_5_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/d_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/g_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/img_25_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/img_28_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/k_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/listView_149_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/loginActivity1024_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/loginActivity900_guideline.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAR/Guideline/t_guideline.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../JAR/SketchBuilderCodeGenerator.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../JAR/SketchBuilderCodeGenerator.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/WriteXML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/WriteXML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/androidelements/AppKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AppKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/Runner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/androidelements/AndroidElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/elements/Element.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/Attribute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/Tag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/WriteMarkup$MarkupFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/WriteMarkup.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/androidelements/WriteXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/WriteXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/languagewrite/WriteMarkup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/languagewrite/WriteMarkup.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,35 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-401">
-              <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3730">
-              <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+            <state relative-caret-position="-2239">
+              <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,7 +120,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,6 +171,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -213,7 +180,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555850841283" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555883550745" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAR" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -273,7 +240,7 @@
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2322239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23600605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -568,20 +535,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3730">
-          <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401">
-          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+        <state relative-caret-position="1105">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -590,8 +547,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2239">
+          <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

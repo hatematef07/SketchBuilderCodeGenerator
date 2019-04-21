@@ -5,11 +5,12 @@ import com.google.gson.Gson;
 import languagewrite.Attribute;
 import languagewrite.Tag;
 import languagewrite.WriteMarkup;
-import server.Client;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class WriteXML{
 
@@ -18,12 +19,13 @@ public class WriteXML{
     private static String outputPath;
     private static String filename;
     private static File outputFile;
-    public static String image;
+    private static String image = "image.png";
+    private static Path source = Paths.get("image.png");
     private static String mainDesign = "design";
     private static String guideDesign = "guideline";
     private static String OS = System.getProperty("os.name").toLowerCase();
 
-    public WriteXML(String[] args, Client client) {
+    public WriteXML(String[] args) {
         for (int i = 0; i < args.length; i++) {
             inputPath = args[i];
             i++;
@@ -31,37 +33,27 @@ public class WriteXML{
             File file = new File(inputPath);
             outputFile = new File(outputPath);
             if (file.isDirectory() && outputFile.isDirectory()) {
-                folderMiner(file, client);
+                folderMiner(file);
             } else if (!outputFile.isDirectory()) {
                 System.out.println("Output path is not a folder!");
-                try {
-                    client.setOut(String.valueOf(400));
-                } catch(IOException e) {
-                    System.out.println(e);
-                }
-                System.exit(0);
+                System.exit(1);
             } else {
-                fileMiner(file, client);
+                fileMiner(file);
             }
-        }
-        try {
-            client.setOut(String.valueOf(200));
-        } catch(IOException e) {
-            System.out.println(e);
         }
     }
 
-    private static void folderMiner(File file, Client client) {
+    private static void folderMiner(File file) {
         for (File fileEntry : file.listFiles()) {
             if (fileEntry.isDirectory()) {
-                folderMiner(fileEntry, client);
+                folderMiner(fileEntry);
             } else {
-                fileMiner(fileEntry, client);
+                fileMiner(fileEntry);
             }
         }
     }
 
-    private static void fileMiner(File file, Client client) {
+    private static void fileMiner(File file) {
         path = file.getPath();
         int index = 0;
         if (OS.contains("win")) {
@@ -85,12 +77,7 @@ public class WriteXML{
                 }
             } catch (IOException e) {
                 System.out.println(e);
-                try {
-                    client.setOut(String.valueOf(400));
-                } catch(IOException ex) {
-                    System.out.println(ex);
-                }
-                System.exit(0);
+                System.exit(1);
             }
         }
     }
@@ -175,12 +162,25 @@ public class WriteXML{
             } else if (view.equalsIgnoreCase("ImageView")) {
                 AndroidImageView imageView = new AndroidImageView(child.getObject());
                 File dir = new File(outputFile.getAbsolutePath() + "/XML/drawable");
-                for (File fileEntry : dir.listFiles()) {
-                    if(fileEntry.exists()) {
-                        image = fileEntry.getName().replaceAll(".png", "");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                    Path target = dir.toPath().resolve(image);
+                    try {
+                        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    } catch(IOException e) {
+                        System.out.println(e);
+                        System.exit(1);
+                    }
+                } else {
+                    Path target = dir.toPath().resolve(image);
+                    try {
+                        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    } catch(IOException e) {
+                        System.out.println(e);
+                        System.exit(1);
                     }
                 }
-                imageView.setSrc("@drawable/" + image);
+                imageView.setSrc("@drawable/" + image.replaceAll(".png", ""));
                 switch (String.valueOf(isGuideline)) {
                     case "false":
                         imageView.draw(root);
