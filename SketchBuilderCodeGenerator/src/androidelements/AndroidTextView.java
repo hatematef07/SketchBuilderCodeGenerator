@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidTextView extends AndroidElement {
@@ -24,14 +23,14 @@ public class AndroidTextView extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag textView = new Tag(getView());
-        textView.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        textView.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        textView.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        textView.addAttribute(new Attribute(AppKeys.TEXT_KEY, this.getText()));
-        textView.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        textView.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        textView.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        textView.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        textView.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        textView.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        textView.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        textView.setAttribute(AppKeys.TEXT_KEY, this.getText());
+        textView.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        textView.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        textView.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        textView.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(textView);
     }
 

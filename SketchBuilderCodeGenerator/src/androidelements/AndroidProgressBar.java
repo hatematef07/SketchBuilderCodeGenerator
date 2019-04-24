@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidProgressBar extends AndroidElement {
@@ -18,13 +17,13 @@ public class AndroidProgressBar extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag progressBar = new Tag(getView());
-        progressBar.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        progressBar.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        progressBar.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        progressBar.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        progressBar.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        progressBar.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        progressBar.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        progressBar.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        progressBar.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        progressBar.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        progressBar.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        progressBar.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        progressBar.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        progressBar.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(progressBar);
     }
 

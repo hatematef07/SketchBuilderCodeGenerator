@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidSeekBar extends AndroidElement {
@@ -18,13 +17,13 @@ public class AndroidSeekBar extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag seekBar = new Tag(getView());
-        seekBar.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        seekBar.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        seekBar.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        seekBar.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        seekBar.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        seekBar.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        seekBar.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        seekBar.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        seekBar.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        seekBar.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        seekBar.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        seekBar.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        seekBar.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        seekBar.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(seekBar);
     }
 

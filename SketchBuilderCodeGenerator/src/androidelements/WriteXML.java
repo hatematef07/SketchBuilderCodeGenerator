@@ -2,7 +2,6 @@ package androidelements;
 
 import Model.JSONModel;
 import com.google.gson.Gson;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 import languagewrite.WriteMarkup;
 
@@ -19,8 +18,8 @@ public class WriteXML{
     private static String outputPath;
     private static String filename;
     private static File outputFile;
-    private static String image = "image.png";
-    private static Path source = Paths.get("image.png");
+    private static String image = "placeholder.png";
+    private static Path source = Paths.get("icons/placeholder.png");
     private static String mainDesign = "design";
     private static String guideDesign = "guideline";
     private static String OS = System.getProperty("os.name").toLowerCase();
@@ -87,14 +86,14 @@ public class WriteXML{
         switch (String.valueOf(isGuideline)) {
             case "false":
                 Tag designRoot = new Tag(AppKeys.DESIGN_ROOT);
-                designRoot.addAttribute(new Attribute(AppKeys.XMLNS_ANDROID, "http://schemas.android.com/apk/res/android"));
-                designRoot.addAttribute(new Attribute(AppKeys.XMLNS_APP, "http://schemas.android.com/apk/res-auto"));
-                designRoot.addAttribute(new Attribute(AppKeys.XMLNS_TOOLS, "http://schemas.android.com/tools"));
-                designRoot.addAttribute(new Attribute(AppKeys.WIDTH_KEY, "match_parent"));
-                designRoot.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, "match_parent"));
+                designRoot.setAttribute(AppKeys.XMLNS_ANDROID, "http://schemas.android.com/apk/res/android");
+                designRoot.setAttribute(AppKeys.XMLNS_APP, "http://schemas.android.com/apk/res-auto");
+                designRoot.setAttribute(AppKeys.XMLNS_TOOLS, "http://schemas.android.com/tools");
+                designRoot.setAttribute(AppKeys.WIDTH_KEY, "match_parent");
+                designRoot.setAttribute(AppKeys.HEIGHT_KEY, "match_parent");
 
                 Tag include = new Tag(AppKeys.INCLUDE_KEY);
-                include.addAttribute(new Attribute(AppKeys.LAYOUT_KEY, ("@layout/" + filename + "_" + guideDesign).replaceAll(".xml", "")));
+                include.setAttribute(AppKeys.LAYOUT_KEY, ("@layout/" + filename + "_" + guideDesign).replaceAll(".xml", ""));
 
                 designRoot.addChild(include);
                 addChildren(children.getChildren(), designRoot, false);
@@ -103,8 +102,8 @@ public class WriteXML{
                 break;
             case "true":
                 Tag guidelineRoot = new Tag(AppKeys.GUIDELINE_ROOT);
-                guidelineRoot.addAttribute(new Attribute(AppKeys.XMLNS_ANDROID, "http://schemas.android.com/apk/res/android"));
-                guidelineRoot.addAttribute(new Attribute(AppKeys.XMLNS_APP, "http://schemas.android.com/apk/res-auto"));
+                guidelineRoot.setAttribute(AppKeys.XMLNS_ANDROID, "http://schemas.android.com/apk/res/android");
+                guidelineRoot.setAttribute(AppKeys.XMLNS_APP, "http://schemas.android.com/apk/res-auto");
 
                 addChildren(children.getChildren(), guidelineRoot, true);
 
@@ -161,7 +160,7 @@ public class WriteXML{
                 }
             } else if (view.equalsIgnoreCase("ImageView")) {
                 AndroidImageView imageView = new AndroidImageView(child.getObject());
-                File dir = new File(outputFile.getAbsolutePath() + "/XML/drawable");
+                File dir = new File(outputFile.getAbsolutePath() + "/app/src/main/res/drawable");
                 if (!dir.exists()) {
                     dir.mkdirs();
                     Path target = dir.toPath().resolve(image);
@@ -279,7 +278,7 @@ public class WriteXML{
         File dir;
         switch (String.valueOf(isGuideline)) {
             case "false":
-                dir = new File(outputFile.getAbsolutePath() + "/XML/layout");
+                dir = new File(outputFile.getAbsolutePath() + "/app/src/main/res/layout");
                 if (!dir.exists()) {
                     dir.mkdirs();
                     if (OS.contains("win")) {
@@ -305,7 +304,7 @@ public class WriteXML{
                 }
                 break;
             case "true":
-                dir = new File(outputFile.getAbsolutePath() + "/XML/layout");
+                dir = new File(outputFile.getAbsolutePath() + "/app/src/main/res/layout");
                 if (!dir.exists()) {
                     dir.mkdirs();
                     if (OS.contains("win")) {

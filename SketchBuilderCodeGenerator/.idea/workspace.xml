@@ -9,14 +9,36 @@
     <list default="true" id="0685f8e2-0cdb-4541-acdf-8058d47d6c66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../JAR/SketchBuilderCodeGenerator.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../JAR/SketchBuilderCodeGenerator.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/Runner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/androidelements/AndroidElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/elements/Element.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/Attribute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/Tag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/WriteMarkup$MarkupFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderRebuilt/languagewrite/WriteMarkup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidCheckBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidEditText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidImageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidImageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidListView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidProgressBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidProgressBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidRadioButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidRadioButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidSeekBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidSeekBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidSpinner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidSwitch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidTextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/AndroidTextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/WriteXML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SketchBuilderCodeGenerator/androidelements/WriteXML.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidCheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidCheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidEditText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidEditText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidProgressBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidProgressBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidRadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidRadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidSeekBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidSeekBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidSpinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidSpinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/AndroidTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/AndroidTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidelements/GuideLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/GuideLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/androidelements/WriteXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/androidelements/WriteXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languagewrite/Attribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languagewrite/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/languagewrite/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languagewrite/WriteMarkup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/languagewrite/WriteMarkup.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,17 +52,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/languagewrite/Tag.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1060#1061#0" expanded="true" />
+                <element signature="e#1110#1111#0" expanded="true" />
+                <element signature="e#1179#1180#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/androidelements/GuideLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#828#829#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#972#973#0" expanded="true" />
+                <element signature="e#1008#1009#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1075#1076#0" expanded="true" />
+                <element signature="e#1110#1111#0" expanded="true" />
+                <element signature="e#1166#1167#0" expanded="true" />
+                <element signature="e#1214#1215#0" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1284#1285#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1380#1381#0" expanded="true" />
+                <element signature="e#1417#1418#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1502#1503#0" expanded="true" />
+                <element signature="e#1546#1547#0" expanded="true" />
+                <element signature="e#1586#1587#0" expanded="true" />
+                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="e#1680#1681#0" expanded="true" />
+                <element signature="e#1730#1731#0" expanded="true" />
+                <element signature="method#percentage#0;class#GuideLine#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
+        <entry file="file://$PROJECT_DIR$/src/languagewrite/WriteMarkup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2239">
-              <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+            <state relative-caret-position="394">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,7 +148,11 @@
       <find>System.out.println</find>
       <find>System.out.print</find>
       <find>try {</find>
+      <find>addAttribute</find>
     </findStrings>
+    <replaceStrings>
+      <replace>setAtrribute</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -76,14 +165,20 @@
         <option value="$PROJECT_DIR$/src/HTML/Tag.java" />
         <option value="$PROJECT_DIR$/src/HTML/WriteMarkup.java" />
         <option value="$PROJECT_DIR$/src/markupwriter/WriteMarkup.java" />
-        <option value="$PROJECT_DIR$/src/languagewrite/Tag.java" />
-        <option value="$PROJECT_DIR$/src/androidelements/GuideLine.java" />
         <option value="$PROJECT_DIR$/src/elements/Element.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidElement.java" />
         <option value="$PROJECT_DIR$/src/Model/JSONModel.java" />
+        <option value="$PROJECT_DIR$/src/htmlelements/HTMLElement.java" />
+        <option value="$PROJECT_DIR$/src/htmlelements/HTMLButton.java" />
+        <option value="$PROJECT_DIR$/src/androidelements/AppKeys.java" />
+        <option value="$PROJECT_DIR$/src/server/Client.java" />
+        <option value="$PROJECT_DIR$/src/Runner.java" />
+        <option value="$PROJECT_DIR$/src/languagewrite/Tag.java" />
+        <option value="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidEditText.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidCheckBox.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidButton.java" />
+        <option value="$PROJECT_DIR$/src/androidelements/WriteXML.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidListView.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidProgressBar.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidRadioButton.java" />
@@ -91,14 +186,8 @@
         <option value="$PROJECT_DIR$/src/androidelements/AndroidSpinner.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidSwitch.java" />
         <option value="$PROJECT_DIR$/src/androidelements/AndroidTextView.java" />
-        <option value="$PROJECT_DIR$/src/htmlelements/HTMLElement.java" />
-        <option value="$PROJECT_DIR$/src/htmlelements/HTMLButton.java" />
-        <option value="$PROJECT_DIR$/src/androidelements/AppKeys.java" />
-        <option value="$PROJECT_DIR$/src/androidelements/AndroidImageView.java" />
+        <option value="$PROJECT_DIR$/src/androidelements/GuideLine.java" />
         <option value="$PROJECT_DIR$/src/languagewrite/WriteMarkup.java" />
-        <option value="$PROJECT_DIR$/src/Runner.java" />
-        <option value="$PROJECT_DIR$/src/server/Client.java" />
-        <option value="$PROJECT_DIR$/src/androidelements/WriteXML.java" />
       </list>
     </option>
   </component>
@@ -109,10 +198,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="756" />
-    <option name="y" value="13" />
-    <option name="width" value="776" />
-    <option name="height" value="696" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -120,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,7 +261,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -180,7 +269,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555883550745" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556023987832" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAR" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -240,14 +329,14 @@
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23600605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32956383" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32956383" />
@@ -299,122 +388,13 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/languagewrite/Attribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testxml.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/languagewrite/Tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="71" column="28" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidCheckBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="54" column="114" selection-start-line="54" selection-start-column="114" selection-end-line="54" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidEditText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSeekBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="110" lean-forward="true" selection-start-line="26" selection-start-column="110" selection-end-line="26" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSpinner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidTextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/JSONModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="789">
           <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidRadioButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -435,12 +415,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/GuideLine.java">
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AppKeys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="87" column="84" selection-start-line="87" selection-start-column="84" selection-end-line="87" selection-end-column="84" />
+        <state relative-caret-position="425">
+          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htmlelements/HTMLButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/image.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Client.java" />
+    <entry file="file://$PROJECT_DIR$/src/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/languagewrite/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidEditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidCheckBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidProgressBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="25" column="95" lean-forward="true" selection-start-line="25" selection-start-column="95" selection-end-line="25" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidRadioButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="47" column="98" lean-forward="true" selection-start-line="47" selection-start-column="98" selection-end-line="47" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSeekBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="93" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSpinner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="93" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="94" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidTextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/androidelements/GuideLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
             <element signature="e#763#764#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
             <element signature="e#828#829#0" expanded="true" />
@@ -472,90 +602,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AppKeys.java">
+    <entry file="file://$PROJECT_DIR$/src/languagewrite/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="39" column="114" selection-start-line="39" selection-start-column="114" selection-end-line="39" selection-end-column="114" />
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/htmlelements/HTMLButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/image.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="12" column="118" lean-forward="true" selection-start-line="12" selection-start-column="118" selection-end-line="12" selection-end-column="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#635#636#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#1060#1061#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/languagewrite/WriteMarkup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/AndroidElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidelements/WriteXML.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2239">
-          <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        <state relative-caret-position="394">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

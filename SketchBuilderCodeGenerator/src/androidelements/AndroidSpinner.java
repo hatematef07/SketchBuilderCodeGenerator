@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidSpinner extends AndroidElement {
@@ -18,13 +17,13 @@ public class AndroidSpinner extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag spinner = new Tag(getView());
-        spinner.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        spinner.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        spinner.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        spinner.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        spinner.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        spinner.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        spinner.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        spinner.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        spinner.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        spinner.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        spinner.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        spinner.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        spinner.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        spinner.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(spinner);
     }
 

@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidButton extends AndroidElement {
@@ -24,14 +23,14 @@ public class AndroidButton extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag button = new Tag(getView());
-        button.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        button.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        button.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        button.addAttribute(new Attribute(AppKeys.TEXT_KEY, this.getText()));
-        button.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        button.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        button.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        button.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        button.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        button.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        button.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        button.setAttribute(AppKeys.TEXT_KEY, this.getText());
+        button.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        button.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        button.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        button.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(button);
     }
 

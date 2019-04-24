@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidImageView extends AndroidElement {
@@ -32,15 +31,15 @@ public class AndroidImageView extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag imageView = new Tag(getView());
-        imageView.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        imageView.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        imageView.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        imageView.addAttribute(new Attribute(AppKeys.SRC_KEY, this.getSrc()));
-        imageView.addAttribute(new Attribute(AppKeys.SCALE_KEY, this.getScaleType()));
-        imageView.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        imageView.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        imageView.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        imageView.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        imageView.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        imageView.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        imageView.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        imageView.setAttribute(AppKeys.SRC_KEY, this.getSrc());
+        imageView.setAttribute(AppKeys.SCALE_KEY, this.getScaleType());
+        imageView.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        imageView.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        imageView.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        imageView.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(imageView);
     }
 

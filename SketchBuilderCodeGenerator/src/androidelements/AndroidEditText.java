@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidEditText extends AndroidElement {
@@ -19,13 +18,13 @@ public class AndroidEditText extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag editText = new Tag(getView());
-        editText.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        editText.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        editText.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        editText.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        editText.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        editText.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        editText.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        editText.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        editText.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        editText.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        editText.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        editText.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        editText.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        editText.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(editText);
     }
 

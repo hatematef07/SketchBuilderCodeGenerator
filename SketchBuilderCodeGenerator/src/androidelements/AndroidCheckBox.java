@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidCheckBox extends AndroidElement {
@@ -38,15 +37,15 @@ public class AndroidCheckBox extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag checkBox = new Tag(getView());
-        checkBox.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        checkBox.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        checkBox.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        checkBox.addAttribute(new Attribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked())));
-        checkBox.addAttribute(new Attribute(AppKeys.TEXT_KEY, this.getText()));
-        checkBox.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        checkBox.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        checkBox.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        checkBox.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        checkBox.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        checkBox.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        checkBox.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        checkBox.setAttribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked()));
+        checkBox.setAttribute(AppKeys.TEXT_KEY, this.getText());
+        checkBox.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        checkBox.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        checkBox.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        checkBox.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(checkBox);
     }
 

@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidListView extends AndroidElement {
@@ -18,13 +17,13 @@ public class AndroidListView extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag listView = new Tag(getView());
-        listView.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        listView.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        listView.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        listView.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        listView.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        listView.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        listView.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        listView.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        listView.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        listView.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        listView.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        listView.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        listView.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        listView.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(listView);
     }
 

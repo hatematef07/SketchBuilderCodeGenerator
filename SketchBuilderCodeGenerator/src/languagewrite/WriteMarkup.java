@@ -2,8 +2,7 @@ package languagewrite;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class WriteMarkup {
 
@@ -60,13 +59,20 @@ public class WriteMarkup {
         markupFile.append(TAG_OPEN_START);
         String tagName =  tag.getName();
         markupFile.append(tagName);
-        List<Attribute> attributes = tag.getAttributes();
-        for(int i = 0; i < attributes.size(); ++i){
+        HashMap<String, String> attributes = (HashMap<String, String>) tag.getAttributes();
+        Set mapSet = (Set) attributes.entrySet();
+        Iterator mapIterator = mapSet.iterator();
+        while (mapIterator.hasNext()) {
+            Map.Entry mapEntry = (Map.Entry) mapIterator.next();
+            // getKey Method of HashMap access a key of map
+            String keyValue = (String) mapEntry.getKey();
+            //getValue method returns corresponding key's value
+            String value = (String) mapEntry.getValue();
             if(format == MarkupFormat.HTML) {
-                String attr = " " + attributes.get(i).getName() + "=\"" + attributes.get(i).getValue() + "\"";
+                String attr = " " + keyValue + "=\"" + value + "\"";
                 markupFile.append(attr);
-            }else if(format == MarkupFormat.XML){
-                String attr = "\n" + tabs + attributes.get(i).getName() + "=\"" + attributes.get(i).getValue() + "\"";
+            } else if(format == MarkupFormat.XML) {
+                String attr = "\n" + tabs + keyValue + "=\"" + value + "\"";
                 markupFile.append(attr);
             }
         }

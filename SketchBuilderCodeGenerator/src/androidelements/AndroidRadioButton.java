@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidRadioButton extends AndroidElement {
@@ -38,15 +37,15 @@ public class AndroidRadioButton extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag radioButton = new Tag(getView());
-        radioButton.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        radioButton.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        radioButton.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        radioButton.addAttribute(new Attribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked())));
-        radioButton.addAttribute(new Attribute(AppKeys.TEXT_KEY, this.getText()));
-        radioButton.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        radioButton.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        radioButton.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        radioButton.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        radioButton.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        radioButton.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        radioButton.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        radioButton.setAttribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked()));
+        radioButton.setAttribute(AppKeys.TEXT_KEY, this.getText());
+        radioButton.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        radioButton.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        radioButton.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        radioButton.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(radioButton);
     }
 

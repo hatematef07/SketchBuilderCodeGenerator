@@ -1,7 +1,6 @@
 package androidelements;
 
 
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class GuideLine {
@@ -82,41 +81,41 @@ public class GuideLine {
 
     public Tag getStartGuideLine() {
         Tag startGuideline = new Tag(getGUIDE_LINE());
-        startGuideline.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + getId() + "_start_guideline"));
-        startGuideline.addAttribute(new Attribute(AppKeys.GUIDEPERCENT_KEY, percentage(getStartPercent())));
-        startGuideline.addAttribute(new Attribute(AppKeys.WIDTH_KEY, getWidth()));
-        startGuideline.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, getHeight()));
-        startGuideline.addAttribute(new Attribute(AppKeys.ORIENTATION_KEY, AppKeys.VERTICAL));
+        startGuideline.setAttribute(AppKeys.ID_KEY, "@+id/" + getId() + "_start_guideline");
+        startGuideline.setAttribute(AppKeys.GUIDEPERCENT_KEY, percentage(getStartPercent()));
+        startGuideline.setAttribute(AppKeys.WIDTH_KEY, getWidth());
+        startGuideline.setAttribute(AppKeys.HEIGHT_KEY, getHeight());
+        startGuideline.setAttribute(AppKeys.ORIENTATION_KEY, AppKeys.VERTICAL);
         return startGuideline;
     }
 
     public Tag getEndGuideLine() {
         Tag endGuideline = new Tag(getGUIDE_LINE());
-        endGuideline.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + getId() + "_end_guideline"));
-        endGuideline.addAttribute(new Attribute(AppKeys.GUIDEPERCENT_KEY, percentage(getEndPercent())));
-        endGuideline.addAttribute(new Attribute(AppKeys.WIDTH_KEY, getWidth()));
-        endGuideline.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, getHeight()));
-        endGuideline.addAttribute(new Attribute(AppKeys.ORIENTATION_KEY, AppKeys.VERTICAL));
+        endGuideline.setAttribute(AppKeys.ID_KEY, "@+id/" + getId() + "_end_guideline");
+        endGuideline.setAttribute(AppKeys.GUIDEPERCENT_KEY, percentage(getEndPercent()));
+        endGuideline.setAttribute(AppKeys.WIDTH_KEY, getWidth());
+        endGuideline.setAttribute(AppKeys.HEIGHT_KEY, getHeight());
+        endGuideline.setAttribute(AppKeys.ORIENTATION_KEY, AppKeys.VERTICAL);
         return endGuideline;
     }
 
     public Tag getTopGuideLine() {
         Tag topGuideline = new Tag(getGUIDE_LINE());
-        topGuideline.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + getId() + "_top_guideline"));
-        topGuideline.addAttribute(new Attribute(AppKeys.GUIDEPERCENT_KEY, percentage(getTopPercent())));
-        topGuideline.addAttribute(new Attribute(AppKeys.WIDTH_KEY, getWidth()));
-        topGuideline.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, getHeight()));
-        topGuideline.addAttribute(new Attribute(AppKeys.ORIENTATION_KEY, AppKeys.HORIZONTAL));
+        topGuideline.setAttribute(AppKeys.ID_KEY, "@+id/" + getId() + "_top_guideline");
+        topGuideline.setAttribute(AppKeys.GUIDEPERCENT_KEY, percentage(getTopPercent()));
+        topGuideline.setAttribute(AppKeys.WIDTH_KEY, getWidth());
+        topGuideline.setAttribute(AppKeys.HEIGHT_KEY, getHeight());
+        topGuideline.setAttribute(AppKeys.ORIENTATION_KEY, AppKeys.HORIZONTAL);
         return topGuideline;
     }
 
     public Tag getBottomGuideLine() {
         Tag bottomGuideline = new Tag(getGUIDE_LINE());
-        bottomGuideline.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + getId() + "_bottom_guideline"));
-        bottomGuideline.addAttribute(new Attribute(AppKeys.GUIDEPERCENT_KEY, percentage(getBottomPercent())));
-        bottomGuideline.addAttribute(new Attribute(AppKeys.WIDTH_KEY, getWidth()));
-        bottomGuideline.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, getHeight()));
-        bottomGuideline.addAttribute(new Attribute(AppKeys.ORIENTATION_KEY, AppKeys.HORIZONTAL));
+        bottomGuideline.setAttribute(AppKeys.ID_KEY, "@+id/" + getId() + "_bottom_guideline");
+        bottomGuideline.setAttribute(AppKeys.GUIDEPERCENT_KEY, percentage(getBottomPercent()));
+        bottomGuideline.setAttribute(AppKeys.WIDTH_KEY, getWidth());
+        bottomGuideline.setAttribute(AppKeys.HEIGHT_KEY, getHeight());
+        bottomGuideline.setAttribute(AppKeys.ORIENTATION_KEY, AppKeys.HORIZONTAL);
         return bottomGuideline;
     }
 

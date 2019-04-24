@@ -1,7 +1,6 @@
 package androidelements;
 
 import Model.JSONModel;
-import languagewrite.Attribute;
 import languagewrite.Tag;
 
 public class AndroidSwitch extends AndroidElement {
@@ -28,14 +27,14 @@ public class AndroidSwitch extends AndroidElement {
     @Override
     public void draw(Tag root) {
         Tag iSwitch = new Tag(getView());
-        iSwitch.addAttribute(new Attribute(AppKeys.ID_KEY, "@+id/" + this.getId()));
-        iSwitch.addAttribute(new Attribute(AppKeys.WIDTH_KEY, this.getWidth()));
-        iSwitch.addAttribute(new Attribute(AppKeys.HEIGHT_KEY, this.getHeight()));
-        iSwitch.addAttribute(new Attribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked())));
-        iSwitch.addAttribute(new Attribute(AppKeys.START_KEY, "@+id/" + this.getId() + "_start_guideline"));
-        iSwitch.addAttribute(new Attribute(AppKeys.END_KEY, "@+id/" + this.getId() + "_end_guideline"));
-        iSwitch.addAttribute(new Attribute(AppKeys.TOP_KEY, "@+id/" + this.getId() + "_top_guideline"));
-        iSwitch.addAttribute(new Attribute(AppKeys.BOTTOM_KEY, "@+id/" + this.getId() + "_bottom_guideline"));
+        iSwitch.setAttribute(AppKeys.ID_KEY, "@+id/" + this.getId());
+        iSwitch.setAttribute(AppKeys.WIDTH_KEY, this.getWidth());
+        iSwitch.setAttribute(AppKeys.HEIGHT_KEY, this.getHeight());
+        iSwitch.setAttribute(AppKeys.CHECKED_KEY, String.valueOf(this.isChecked()));
+        iSwitch.setAttribute(AppKeys.START_KEY, "@id/" + this.getId() + "_start_guideline");
+        iSwitch.setAttribute(AppKeys.END_KEY, "@id/" + this.getId() + "_end_guideline");
+        iSwitch.setAttribute(AppKeys.TOP_KEY, "@id/" + this.getId() + "_top_guideline");
+        iSwitch.setAttribute(AppKeys.BOTTOM_KEY, "@id/" + this.getId() + "_bottom_guideline");
         root.addChild(iSwitch);
     }
 
