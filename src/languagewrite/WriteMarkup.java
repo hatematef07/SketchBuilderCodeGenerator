@@ -1,5 +1,7 @@
 package languagewrite;
 
+import javafx.util.Pair;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -59,15 +61,11 @@ public class WriteMarkup {
         markupFile.append(TAG_OPEN_START);
         String tagName =  tag.getName();
         markupFile.append(tagName);
-        HashMap<String, String> attributes = (HashMap<String, String>) tag.getAttributes();
-        Set mapSet = (Set) attributes.entrySet();
-        Iterator mapIterator = mapSet.iterator();
-        while (mapIterator.hasNext()) {
-            Map.Entry mapEntry = (Map.Entry) mapIterator.next();
-            // getKey Method of HashMap access a key of map
-            String keyValue = (String) mapEntry.getKey();
-            //getValue method returns corresponding key's value
-            String value = (String) mapEntry.getValue();
+        ArrayList<Pair<String, String>>  attributes =  tag.getAttributes();
+
+        for (Pair<String, String> attribute : attributes) {
+            String keyValue = attribute.getKey();
+            String value = attribute.getValue();
             if(format == MarkupFormat.HTML) {
                 String attr = " " + keyValue + "=\"" + value + "\"";
                 markupFile.append(attr);
