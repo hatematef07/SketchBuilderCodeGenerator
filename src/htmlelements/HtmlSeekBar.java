@@ -11,7 +11,7 @@ public class HtmlSeekBar extends HTMLElement {
     private final String INPUT_ID ="customRange1";
 
     public HtmlSeekBar(HtmlJsonElement jsonModel) {
-        super(  jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(),  jsonModel.getWidth(),jsonModel.getHeight());
+        super(  jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(),  jsonModel.getWidth(),jsonModel.getHeight());
     }
 
 
@@ -27,6 +27,8 @@ public class HtmlSeekBar extends HTMLElement {
         input.setAttribute("type",this.INPUT_TYPE);
         input.setAttribute("class",this.INPUT_CLASS);
         input.setAttribute("id",this.INPUT_ID);
+        input.setAttribute("width", this.getWidth() + "%");
+        input.setAttribute("height", this.getHeight() + "%");
         root.addChild(input);
     }
 }

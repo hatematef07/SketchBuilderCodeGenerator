@@ -12,7 +12,7 @@ public class HtmlSwitch extends HTMLElement {
     private final String LABEL_FOR = "customSwitch1";
 
     public HtmlSwitch(HtmlJsonElement jsonModel) {
-        super( jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(), jsonModel.getWidth(),jsonModel.getHeight());
+        super( jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(), jsonModel.getWidth(),jsonModel.getHeight());
     }
     @Override
     public void draw(Tag root) {
@@ -21,6 +21,8 @@ public class HtmlSwitch extends HTMLElement {
         input.setAttribute("type",this.INPUT_TYPE);
         input.setAttribute("class",this.INPUT_CLASS);
         input.setAttribute("id",this.INPUT_ID);
+        input.setAttribute("width", this.getWidth() + "%");
+        input.setAttribute("height", this.getHeight() + "%");
 
 
 

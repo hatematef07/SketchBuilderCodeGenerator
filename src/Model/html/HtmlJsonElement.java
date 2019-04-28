@@ -4,26 +4,40 @@ import com.google.gson.annotations.SerializedName;
 
 public class HtmlJsonElement {
 
+
+    @SerializedName("element")
+    private String element;
+    @SerializedName("id")
+    private String id;
+    @SerializedName("start_column")
+    private String start_column;
     @SerializedName("width")
     private String width;
     @SerializedName("height")
     private String height;
-    @SerializedName("view")
-    private String view;
-    @SerializedName("id")
-    private String id;
-    @SerializedName("top")
-    private String top;
-    @SerializedName("left")
-    private String left;
 
-    public HtmlJsonElement(String width, String height, String view, String id, String top, String left) {
+
+    public HtmlJsonElement( String element , String id, String start_column ,String width, String height) {
+
+        this.element = element;
+        this.id = id;
+        this.start_column=start_column;
         this.width = width;
         this.height = height;
-        this.view = view;
-        this.id = id;
-        this.top = top;
-        this.left = left;
+
+    }
+
+
+    public String getElement() {
+        return element;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getStart_column() {
+        return start_column;
     }
 
     public String getWidth() {
@@ -34,20 +48,20 @@ public class HtmlJsonElement {
         return height;
     }
 
-    public String getView() {
-        return view;
+
+
+
+
+    public void setElement(String element) {
+        this.element = element;
     }
 
-    public String getId() {
-        return id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getTop() {
-        return top;
-    }
-
-    public String getLeft() {
-        return left;
+    public void setStart_column(String start_column) {
+        this.start_column = start_column;
     }
 
     public void setWidth(String width) {
@@ -58,19 +72,5 @@ public class HtmlJsonElement {
         this.height = height;
     }
 
-    public void setView(String view) {
-        this.view = view;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setTop(String top) {
-        this.top = top;
-    }
-
-    public void setLeft(String left) {
-        this.left = left;
-    }
 }

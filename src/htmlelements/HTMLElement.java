@@ -6,22 +6,28 @@ import languagewrite.Tag;
 public abstract class HTMLElement implements Element {
     public abstract void draw(Tag root);
 
-    private String view;
+    private String element;
+    private String id;
+    private String start_column;
     private String width;
     private String height;
-    private String id;
-    private String top;
-    private String left;
 
 
-    public HTMLElement ( String view ,String id,String top , String left , String width , String height ){
-        this.view = view;
+
+    public HTMLElement ( String element ,String id,String start_column ,  String width , String height ){
+        this.element = element;
         this.id = id;
-        this.top = top;
-        this.left = left;
+        this.start_column = start_column;
         this.width = width;
         this.height = height;
 
+    }
+
+    public String getElement() {
+        return element;
+    }
+    public void setElement(String element) {
+        this.element = element;
     }
 
     public String getId() {
@@ -31,19 +37,13 @@ public abstract class HTMLElement implements Element {
         this.id = id;
     }
 
-    public String getTop() {
-        return top;
+    public String getStart_column() {
+        return start_column;
     }
-    public void setTop(String top) {
-        this.top = top;
+    public void setStart_column(String start_column) {
+        this.start_column = start_column;
     }
 
-    public String getLeft() {
-        return left;
-    }
-    public void setLeft(String top) {
-        this.left = left;
-    }
 
     public String getWidth() {
         return width;
@@ -59,12 +59,7 @@ public abstract class HTMLElement implements Element {
         this.height = height;
     }
 
-    public String getView() {
-        return view;
-    }
-    public void setView(String top) {
-        this.view = view;
-    }
+
 
 
 }

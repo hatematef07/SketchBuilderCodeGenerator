@@ -15,7 +15,7 @@ public class HtmlRadioButton extends HTMLElement {
 
 
     public HtmlRadioButton(HtmlJsonElement jsonModel) {
-        super( jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(), jsonModel.getWidth(),jsonModel.getHeight());
+        super( jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(), jsonModel.getWidth(),jsonModel.getHeight());
     }
 
 
@@ -28,6 +28,8 @@ public class HtmlRadioButton extends HTMLElement {
         input.setAttribute("name",this.INPUT_NAME);
         input.setAttribute("id",this.INPUT_ID);
         input.setAttribute("class",this.INPUT_CLASS);
+        input.setAttribute("width", this.getWidth() + "%");
+        input.setAttribute("height", this.getHeight() + "%");
 
 
         Tag label = new Tag("label");

@@ -12,7 +12,7 @@ public class HtmlImageView extends HTMLElement {
 
 
     public HtmlImageView(HtmlJsonElement jsonModel) {
-        super( jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(),  jsonModel.getWidth(),jsonModel.getHeight());
+        super( jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(),  jsonModel.getWidth(),jsonModel.getHeight());
     }
 
 
@@ -26,8 +26,8 @@ public class HtmlImageView extends HTMLElement {
         img.setAttribute("src",this.IMG_SRC);
         img.setAttribute("class",this.IMG_CLASS);
         img.setAttribute("alt",this.IMG_ALT);
-        img.setAttribute("width", this.getWidth());
-        img.setAttribute("height", this.getHeight());
+        img.setAttribute("width", this.getWidth() + "%");
+        img.setAttribute("height", this.getHeight() + "%");
 
 
 

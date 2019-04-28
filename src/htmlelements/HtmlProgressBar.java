@@ -15,7 +15,7 @@ public class HtmlProgressBar extends HTMLElement {
 
 
     public HtmlProgressBar(HtmlJsonElement jsonModel) {
-        super( jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(), jsonModel.getWidth(),jsonModel.getHeight());
+        super( jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(), jsonModel.getWidth(),jsonModel.getHeight());
     }
 
 
@@ -32,6 +32,8 @@ public class HtmlProgressBar extends HTMLElement {
         div2.setAttribute("aria-valuenow",this.DIV_ARIA_VALUE_NOW);
         div2.setAttribute("aria-valuemin",this.DIV_ARIA_VALUE_MIN);
         div2.setAttribute("aria-valuemax",this.DIV_ARIA_VALUE_MAX);
+        div2.setAttribute("width", this.getWidth() + "%");
+        div2.setAttribute("height", this.getHeight() + "%");
 
         Tag div = new Tag("div");
         div.setAttribute("class",this.DIV_CLASS);

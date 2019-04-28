@@ -11,7 +11,7 @@ public class HtmlListView extends HTMLElement {
 
 
     public HtmlListView(HtmlJsonElement jsonModel) {
-        super( jsonModel.getView(),jsonModel.getId(), jsonModel.getTop(), jsonModel.getLeft(), jsonModel.getWidth(),jsonModel.getHeight());
+        super( jsonModel.getElement(),jsonModel.getId(), jsonModel.getStart_column(), jsonModel.getWidth(),jsonModel.getHeight());
     }
     @Override
     public void draw(Tag root) {
@@ -19,15 +19,17 @@ public class HtmlListView extends HTMLElement {
 
         Tag li = new Tag("li");
         li.setAttribute("class",this.li_CLASS);
-        li.setTagValue("list view 2 ");
+        li.setTagValue("list view 1 ");
 
         Tag lii = new Tag("li");
         lii.setAttribute("alt",this.lii_CLASS);
-        lii.setTagValue("list view 3 ");
+        lii.setTagValue("list view 2 ");
 
         Tag ul = new Tag("ul");
         ul.setAttribute("class",this.UL_CLASS);
-        ul.setTagValue("list view 1 ");
+        ul.setAttribute("width", this.getWidth() + "%");
+        ul.setAttribute("height", this.getHeight() + "%");
+
 
         ul.addChild(li);
         ul.addChild(lii);

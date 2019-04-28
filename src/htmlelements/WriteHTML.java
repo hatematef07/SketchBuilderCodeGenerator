@@ -136,7 +136,7 @@ public class WriteHtml {
            // HtmlJsonElement el = child.getElement();
 
             //for(HtmlJsonElement el: elements){
-                String view = el.getView();
+                String view = el.getElement();
                 if (view.equalsIgnoreCase("Button")) {
                     HTMLButton btn = new HTMLButton(el);
                     btn.draw(columnTag);
