@@ -19,7 +19,7 @@ public class WriteCSharp {
     private static String OS = System.getProperty("os.name").toLowerCase();
 
     public WriteCSharp(String[] args) {
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
             i++;
             outputPath = args[i];

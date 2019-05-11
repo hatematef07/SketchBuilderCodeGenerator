@@ -40,7 +40,7 @@ public class WriteHtml {
     private static final String MAIN_DIV_CLASS = "container body-content";
 
     public WriteHtml(String[] args) {
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
             i++;
             outputPath = args[i];

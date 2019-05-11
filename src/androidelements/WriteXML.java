@@ -25,7 +25,7 @@ public class WriteXML{
     private static String OS = System.getProperty("os.name").toLowerCase();
 
     public WriteXML(String[] args) {
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
             i++;
             outputPath = args[i];
