@@ -285,7 +285,6 @@ public class WriteXML{
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                        outputFile.listFiles();
                     } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
