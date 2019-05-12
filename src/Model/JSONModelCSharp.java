@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class JSONModelCSharp {
 
-    @SerializedName("views")
+    @SerializedName("objects")
     JSONModelCSharp[] children;
     @SerializedName("width")
     private String width;

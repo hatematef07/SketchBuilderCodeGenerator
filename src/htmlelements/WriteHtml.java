@@ -236,7 +236,8 @@ public class WriteHtml {
                     HtmlModel jsonFile = gson.fromJson(content, HtmlModel.class);
 
                     buildHTML(jsonFile.getRows());
-                }
+                } else
+                    System.out.println("Invalid file format.");
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);

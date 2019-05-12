@@ -60,13 +60,14 @@ public class WriteCSharp {
                 // Read json file content into a string
                 String content = new String(Files.readAllBytes(Paths.get(path)));
 
-                if (content.contains("\"views\": [")) {
+                if (content.contains("\"objects\": [")) {
                     // Convert json content to java object
                     Gson gson = new Gson();
                     JSONModelCSharp children = gson.fromJson(content, JSONModelCSharp.class);
 
                     buildCSharp(children);
-                }
+                } else
+                    System.out.println("Invalid file format.");
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
@@ -81,6 +82,8 @@ public class WriteCSharp {
         StringBuilder controls = new StringBuilder();
         StringBuilder objects = new StringBuilder();
         StringBuilder formRoot = new StringBuilder();
+        String height = children.getHeight();
+        String width = children.getWidth();
 
         root.append("partial class " + filename + "\n" +
                 "{\n" +
@@ -118,7 +121,7 @@ public class WriteCSharp {
                 "        // \n" +
                 "        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);\n" +
                 "        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;\n" +
-                "        this.ClientSize = new System.Drawing.Size(300, 250);\n" +
+                "        this.ClientSize = new System.Drawing.Size(" + width + ", " + height + ");\n" +
                 "        this.Name = \"" + filename + "\";\n" +
                 "        this.Text = \"Design\";\n" +
                 "        this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;\n" +

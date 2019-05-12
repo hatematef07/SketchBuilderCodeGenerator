@@ -73,7 +73,8 @@ public class WriteXML{
 
                     buildXML(children, false);
                     buildXML(children, true);
-                }
+                } else
+                    System.out.println("Invalid file format.");
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
