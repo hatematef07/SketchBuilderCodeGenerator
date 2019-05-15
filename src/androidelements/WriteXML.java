@@ -25,7 +25,7 @@ public class WriteXML{
     private static String OS = System.getProperty("os.name").toLowerCase();
 
     public WriteXML(String[] args) {
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
             i++;
             outputPath = args[i];
@@ -73,7 +73,8 @@ public class WriteXML{
 
                     buildXML(children, false);
                     buildXML(children, true);
-                }
+                } else
+                    System.out.println("Invalid file format.");
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
@@ -285,7 +286,6 @@ public class WriteXML{
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                         writeMarkup.writeMarkupFile((dir.getAbsolutePath() + "\\" + file), WriteMarkup.MarkupFormat.XML);
-                        outputFile.listFiles();
                     } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
                         WriteMarkup writeMarkup = new WriteMarkup(root);
                         writeMarkup.setDocumentDeclaration("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
