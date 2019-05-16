@@ -301,7 +301,7 @@ public class WriteCSharp {
 
     private static void generateFiles(String file, StringBuilder root) {
         File dir;
-        dir = new File(outputFile.getAbsolutePath() + "/src");
+        dir = new File(outputFile.getAbsolutePath());
         if (!dir.exists()) {
             dir.mkdirs();
             if (OS.contains("win")) {

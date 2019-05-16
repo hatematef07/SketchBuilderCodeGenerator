@@ -179,7 +179,7 @@ public class WriteHtml {
 
     private static void generateFiles(String file, Tag root) {
         File dir;
-        dir = new File(outputFile.getAbsolutePath() + "/HTML");
+        dir = new File(outputFile.getAbsolutePath());
         if (!dir.exists()) {
             dir.mkdirs();
             if (OS.contains("win")) {
