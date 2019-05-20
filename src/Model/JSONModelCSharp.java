@@ -11,7 +11,7 @@ public class JSONModelCSharp {
     private String width;
     @SerializedName("height")
     private String height;
-    @SerializedName("view")
+    @SerializedName("object")
     private String view;
     @SerializedName("text")
     private String text;
