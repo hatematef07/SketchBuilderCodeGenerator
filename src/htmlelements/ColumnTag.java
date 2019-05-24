@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ColumnTag extends Tag {
     private final String COLUMN_CLASS ="col";
-    private final String COLUMN_STYLE = "padding-top:10px";
+    private final String COLUMN_STYLE = "padding-top:10px;";
 
     public ColumnTag(String name){
         super(name);

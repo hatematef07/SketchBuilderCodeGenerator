@@ -10,7 +10,7 @@ import java.util.Map;
 public class RowTag extends Tag {
 
     private final String classAttribute ="row justify-content-start";
-    private final String styleAttribute = "padding-top:10px";
+    private final String styleAttribute = "padding-top:10px;";
 
     public RowTag(String name){
         super(name);

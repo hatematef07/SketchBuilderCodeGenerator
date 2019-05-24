@@ -18,8 +18,8 @@ public class WriteXML{
     private static String outputPath;
     private static String filename;
     private static File outputFile;
-    private static String image = "placeholder.png";
-    private static Path source = Paths.get("icons/placeholder.png");
+    private static String image = "placeholder.jpg";
+    private static Path source = Paths.get("icons/placeholder.jpg");
     private static String mainDesign = "design";
     private static String guideDesign = "guideline";
     private static String OS = System.getProperty("os.name").toLowerCase();
@@ -27,8 +27,7 @@ public class WriteXML{
     public WriteXML(String[] args) {
         for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
-            i++;
-            outputPath = args[i];
+            outputPath = args[args.length - 1];
             File file = new File(inputPath);
             outputFile = new File(outputPath);
             if (file.isDirectory() && outputFile.isDirectory()) {
@@ -73,8 +72,7 @@ public class WriteXML{
 
                     buildXML(children, false);
                     buildXML(children, true);
-                } else
-                    System.out.println("Invalid file format.");
+                }
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
@@ -180,7 +178,7 @@ public class WriteXML{
                         System.exit(1);
                     }
                 }
-                imageView.setSrc("@drawable/" + image.replaceAll(".png", ""));
+                imageView.setSrc("@drawable/" + image.replaceAll(".jpg", ""));
                 switch (String.valueOf(isGuideline)) {
                     case "false":
                         imageView.draw(root);

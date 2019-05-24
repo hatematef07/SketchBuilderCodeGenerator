@@ -6,7 +6,9 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class WriteCSharp {
 
@@ -14,17 +16,21 @@ public class WriteCSharp {
     private static String inputPath;
     private static String outputPath;
     private static String filename;
+    private static String namespace;
     private static File outputFile;
-    private static int tab = 0;
-    private static String OS = System.getProperty("os.name").toLowerCase();
+    private static int tab;
+    private static String image = "placeholder.jpg";
+    private static Path source = Paths.get("icons/placeholder.jpg");
+    private static final String OS = System.getProperty("os.name").toLowerCase();
 
     public WriteCSharp(String[] args) {
         for (int i = 1; i < args.length; i++) {
+            tab = 0;
             inputPath = args[i];
-            i++;
-            outputPath = args[i];
+            outputPath = args[args.length - 1];
             File file = new File(inputPath);
             outputFile = new File(outputPath);
+            namespace = outputFile.getName();
             if (file.isDirectory() && outputFile.isDirectory()) {
                 folderMiner(file);
             } else if (!outputFile.isDirectory()) {
@@ -66,8 +72,7 @@ public class WriteCSharp {
                     JSONModelCSharp children = gson.fromJson(content, JSONModelCSharp.class);
 
                     buildCSharp(children);
-                } else
-                    System.out.println("Invalid file format.");
+                }
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
@@ -85,59 +90,62 @@ public class WriteCSharp {
         String height = children.getHeight();
         String width = children.getWidth();
 
-        root.append("partial class " + filename + "\n" +
-                "{\n" +
-                "    /// <summary>\n" +
-                "    /// Required designer variable.\n" +
-                "    /// </summary>\n" +
-                "    private System.ComponentModel.IContainer components = null;\n\n");
-
-        dispose.append("    /// <summary>\n" +
-                "    /// Clean up any resources being used.\n" +
-                "    /// </summary>\n" +
-                "    /// <param name=\"disposing\">true if managed resources should be disposed; otherwise, false.</param>\n" +
-                "    protected override void Dispose(bool disposing)\n" +
+        root.append("namespace " + namespace + "\n" +
+                "{" + "\n" +
+                "    partial class " + filename + "\n" +
                 "    {\n" +
-                "        if (disposing && (components != null))\n" +
+                "        /// <summary>\n" +
+                "        /// Required designer variable.\n" +
+                "        /// </summary>\n" +
+                "        private System.ComponentModel.IContainer components = null;\n\n");
+
+        dispose.append("        /// <summary>\n" +
+                "        /// Clean up any resources being used.\n" +
+                "        /// </summary>\n" +
+                "        /// <param name=\"disposing\">true if managed resources should be disposed; otherwise, false.</param>\n" +
+                "        protected override void Dispose(bool disposing)\n" +
                 "        {\n" +
-                "            components.Dispose();\n" +
-                "        }\n" +
-                "        base.Dispose(disposing);\n" +
-                "    }\n\n");
+                "            if (disposing && (components != null))\n" +
+                "            {\n" +
+                "                components.Dispose();\n" +
+                "            }\n" +
+                "            base.Dispose(disposing);\n" +
+                "        }\n\n");
 
         root.append(dispose);
 
-        initialize.append("\n    #region Windows Form Designer generated code\n" +
+        initialize.append("\n        #region Windows Form Designer generated code\n" +
                 "\n" +
-                "    /// <summary>\n" +
-                "    /// Required method for Designer support - do not modify\n" +
-                "    /// the contents of this method with the code editor.\n" +
-                "    /// </summary>\n" +
-                "    private void InitializeComponent()\n" +
-                "    {\n");
+                "        /// <summary>\n" +
+                "        /// Required method for Designer support - do not modify\n" +
+                "        /// the contents of this method with the code editor.\n" +
+                "        /// </summary>\n" +
+                "        private void InitializeComponent()\n" +
+                "        {\n");
 
-        controls.append("        // \n" +
-                "        // " + filename + "\n" +
-                "        // \n" +
-                "        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);\n" +
-                "        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;\n" +
-                "        this.ClientSize = new System.Drawing.Size(" + width + ", " + height + ");\n" +
-                "        this.Name = \"" + filename + "\";\n" +
-                "        this.Text = \"Design\";\n" +
-                "        this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;\n" +
-                "        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;\n");
+        controls.append("            // \n" +
+                "            // " + filename + "\n" +
+                "            // \n" +
+                "            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);\n" +
+                "            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;\n" +
+                "            this.ClientSize = new System.Drawing.Size(" + width + ", " + height + ");\n" +
+                "            this.Name = \"" + filename + "\";\n" +
+                "            this.Text = \"Design\";\n" +
+                "            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;\n" +
+                "            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;\n");
 
         addVariables(children.getChildren(), initialize);
-        initialize.append("        this.SuspendLayout();\n");
+        initialize.append("            this.SuspendLayout();\n");
         addChildren(children.getChildren(), initialize, objects, controls);
 
         initialize.append(controls +
-                "        this.ResumeLayout(false);\n" +
-                "        this.PerformLayout();\n");
+                "            this.ResumeLayout(false);\n" +
+                "            this.PerformLayout();\n");
         root.append(initialize + "    }\n " +
                 "\n" +
-                "    #endregion\n\n" +
+                "        #endregion\n\n" +
                 objects +
+                "    }" + "\n" +
                 "}");
         generateFiles((filename + ".Designer" + ".cs"), root);
 
@@ -149,12 +157,15 @@ public class WriteCSharp {
                 "using System.Linq;\n" +
                 "using System.Text;\n" +
                 "using System.Windows.Forms;\n\n" +
-                "public partial class " + filename + " : Form\n" +
-                "{\n" +
-                "    public " + filename + "()\n" +
+                "namespace " + namespace + "\n" +
+                "{" + "\n" +
+                "    public partial class " + filename + " : Form\n" +
                 "    {\n" +
-                "        InitializeComponent();\n" +
-                "    }\n" +
+                "        public " + filename + "()\n" +
+                "        {\n" +
+                "            InitializeComponent();\n" +
+                "        }\n" +
+                "    }" + "\n" +
                 "}");
 
         generateFiles((filename + ".cs"), formRoot);
@@ -178,6 +189,25 @@ public class WriteCSharp {
             } else if (view.equalsIgnoreCase("ImageView")) {
                 CSharpPictureBox imageView = new CSharpPictureBox(child.getObject());
                 imageView.drawVars(initialize, imageView);
+                File dir = new File(outputFile.getAbsolutePath() + "/images");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                    Path target = dir.toPath().resolve(image);
+                    try {
+                        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    } catch(IOException e) {
+                        System.out.println(e);
+                        System.exit(1);
+                    }
+                } else {
+                    Path target = dir.toPath().resolve(image);
+                    try {
+                        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    } catch (IOException e) {
+                        System.out.println(e);
+                        System.exit(1);
+                    }
+                }
             } else if (view.equalsIgnoreCase("ListView")) {
                 CSharpListView listView = new CSharpListView(child.getObject());
                 listView.drawVars(initialize, listView);

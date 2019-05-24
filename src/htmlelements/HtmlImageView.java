@@ -6,9 +6,10 @@ import languagewrite.Tag;
 public class HtmlImageView extends HTMLElement {
 
 
-    private final String IMG_SRC ="images/image.png";
+    private final String IMG_SRC ="images/placeholder.jpg";
     private final String IMG_CLASS ="img-fluid" ;
     private final String IMG_ALT ="Responsive image";
+    private final String IMG_STYLE = "max-height:500px;max-width:500px;";
 
 
     public HtmlImageView(HtmlJsonElement jsonModel) {
@@ -24,6 +25,7 @@ public class HtmlImageView extends HTMLElement {
 
 
         img.setAttribute("src",this.IMG_SRC);
+        img.setAttribute("style", this.IMG_STYLE);
         img.setAttribute("class",this.IMG_CLASS);
         img.setAttribute("alt",this.IMG_ALT);
         img.setAttribute("width", this.getWidth() + "%");

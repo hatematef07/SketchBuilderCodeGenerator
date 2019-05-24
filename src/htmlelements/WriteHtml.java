@@ -11,7 +11,9 @@ import languagewrite.WriteMarkup;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 
 public class WriteHtml {
@@ -21,6 +23,8 @@ public class WriteHtml {
     private static String outputPath;
     private static String filename;
     private static File outputFile;
+    private static String image = "placeholder.jpg";
+    private static Path source = Paths.get("icons/placeholder.jpg");
     private static String OS = System.getProperty("os.name").toLowerCase();
     private final static String DESIGN = "design";
     private static final String CHARSET = "utf-8";
@@ -42,8 +46,7 @@ public class WriteHtml {
     public WriteHtml(String[] args) {
         for (int i = 1; i < args.length; i++) {
             inputPath = args[i];
-            i++;
-            outputPath = args[i];
+            outputPath = args[args.length - 1];
             File file = new File(inputPath);
             outputFile = new File(outputPath);
             if (file.isDirectory() && outputFile.isDirectory()) {
@@ -148,8 +151,27 @@ public class WriteHtml {
                     edit.draw(columnTag);
 
                 } else if (view.equalsIgnoreCase("ImageView")) {
-                    HtmlImageView image = new HtmlImageView(el);
-                    image.draw(columnTag);
+                    HtmlImageView imageView = new HtmlImageView(el);
+                    imageView.draw(columnTag);
+                    File dir = new File(outputFile.getAbsolutePath() + "/images");
+                    if (!dir.exists()) {
+                        dir.mkdirs();
+                        Path target = dir.toPath().resolve(image);
+                        try {
+                            Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                        } catch(IOException e) {
+                            System.out.println(e);
+                            System.exit(1);
+                        }
+                    } else {
+                        Path target = dir.toPath().resolve(image);
+                        try {
+                            Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                        } catch (IOException e) {
+                            System.out.println(e);
+                            System.exit(1);
+                        }
+                    }
                 } else if (view.equalsIgnoreCase("ListView")) {
                     HtmlListView list = new HtmlListView(el);
                     list.draw(columnTag);
@@ -236,8 +258,7 @@ public class WriteHtml {
                     HtmlModel jsonFile = gson.fromJson(content, HtmlModel.class);
 
                     buildHTML(jsonFile.getRows());
-                } else
-                    System.out.println("Invalid file format.");
+                }
             } catch (IOException e) {
                 System.out.println(e);
                 System.exit(1);
