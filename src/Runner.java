@@ -5,6 +5,8 @@ import htmlelements.WriteHtml;
 public class Runner {
     private static String flag;
     public static void main(String [] args){
+        System.out.println("Start generating code:");
+        System.out.println("--------------------");
         if(args.length == 0) {
             System.out.println("There is no argument to generate");
             System.exit(1);
@@ -22,5 +24,7 @@ public class Runner {
             System.out.println("There is no output type specified");
             System.exit(1);
         }
+        System.out.println("End generator");
+        System.out.println("--------------------");
     }
 }
