@@ -143,10 +143,13 @@ public class WriteHtml {
                 if (view.equalsIgnoreCase("Button")) {
                     HTMLButton btn = new HTMLButton(el);
                     btn.draw(columnTag);
-                } else if (view.equalsIgnoreCase("CheckBox")) {
-                    HtmlCheckBox check = new HtmlCheckBox(el);
-                    check.draw(columnTag);
-                } else if (view.equalsIgnoreCase("EditText")) {
+                } else if (view.equalsIgnoreCase("CheckBox_on")) {
+                    HtmlCheckBox checkON = new HtmlCheckBox(el);
+                    checkON.draw(columnTag);
+                } else if (view.equalsIgnoreCase("CheckBox_off")) {
+                    HtmlCheckBox checkOFF = new HtmlCheckBox(el);
+                    checkOFF.draw(columnTag);
+                }  else if (view.equalsIgnoreCase("EditText")) {
                     HtmlEditText edit = new HtmlEditText(el);
                     edit.draw(columnTag);
 
@@ -178,13 +181,16 @@ public class WriteHtml {
                 } else if (view.equalsIgnoreCase("ProgressBar")) {
                     HtmlProgressBar progs = new HtmlProgressBar(el);
                     progs.draw(columnTag);
-                } else if (view.equalsIgnoreCase("RadioButton")) {
-                    HtmlRadioButton radio = new HtmlRadioButton(el);
-                    radio.draw(columnTag);
-                } else if (view.equalsIgnoreCase("SeekBar")) {
+                } else if (view.equalsIgnoreCase("RadioButton_on")) {
+                    HtmlRadioButton radioON = new HtmlRadioButton(el);
+                    radioON.draw(columnTag);
+                } else if (view.equalsIgnoreCase("RadioButton_off")) {
+                    HtmlRadioButton radioOFF = new HtmlRadioButton(el);
+                    radioOFF.draw(columnTag);
+                } else if (view.equalsIgnoreCase("slidBar")) {
                     HtmlSeekBar seek = new HtmlSeekBar(el);
                     seek.draw(columnTag);
-                } else if (view.equalsIgnoreCase("Spinner")) {
+                } else if (view.equalsIgnoreCase("comboBox")) {
                     HtmlSpinner spinr = new HtmlSpinner(el);
                     spinr.draw(columnTag);
                 } else if (view.equalsIgnoreCase("Switch")) {
@@ -251,12 +257,10 @@ public class WriteHtml {
             try {
                 // Read json file content into a string
                 String content = new String(Files.readAllBytes(Paths.get(path)));
-
                 if (content.contains("\"rows\": [")) {
                     // Convert json content to java object
                     Gson gson = new Gson();
                     HtmlModel jsonFile = gson.fromJson(content, HtmlModel.class);
-
                     buildHTML(jsonFile.getRows());
                 }
             } catch (IOException e) {

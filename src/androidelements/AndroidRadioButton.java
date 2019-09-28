@@ -6,12 +6,11 @@ import languagewrite.Tag;
 public class AndroidRadioButton extends AndroidElement {
     private final String view = "RadioButton";
     private boolean checked;
-    private String text;
+    private final String text = "RadioButton";
 
     public AndroidRadioButton(JSONModel jsonModel) {
         super(jsonModel.getId(), jsonModel.getStart(), jsonModel.getEnd(), jsonModel.getTop(), jsonModel.getBottom());
         this.checked = jsonModel.isChecked();
-        this.text = jsonModel.getText();
     }
 
     public String getView() {
@@ -28,10 +27,6 @@ public class AndroidRadioButton extends AndroidElement {
 
     public String getText() {
         return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 
     @Override
