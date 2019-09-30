@@ -9,6 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - jdk 8
+- gradle build tool
 
 ### Installing
 
