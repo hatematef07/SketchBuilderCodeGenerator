@@ -10,6 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 - jdk 8
 - gradle build tool
+- set JAVA_HOME environment variable to you jdk path
 
 ### Installing
 
