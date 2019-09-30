@@ -18,8 +18,15 @@ These instructions will get you a copy of the project up and running on your loc
 - clone the project to your device and unzip it
 - open the terminal in the main directory
 - write the following command:
+
+*on Linux
 ```
 $ sh gradlew build
+```
+
+*on windows
+```
+$ gradlew build
 ```
 - you will find the jar inside "build/libs" directory
 
