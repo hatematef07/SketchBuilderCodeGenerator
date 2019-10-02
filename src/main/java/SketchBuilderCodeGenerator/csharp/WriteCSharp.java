@@ -57,10 +57,20 @@ public class WriteCSharp {
         int index = 0;
         if (OS.contains("win")) {
             index = path.lastIndexOf("\\");
-            source = Paths.get(System.getProperty("user.dir").replace("build\\libs", "") + "icons/placeholder.jpg");
+            String check = Paths.get(System.getProperty("user.dir")).toString();
+            if(check.contains("build\\libs")) {
+                source = Paths.get(System.getProperty("user.dir").replace("build\\libs", "") + "icons/placeholder.jpg");
+            } else {
+                source = Paths.get(System.getProperty("user.dir") + "/icons/placeholder.jpg");
+            }
         } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
             index = path.lastIndexOf("/");
-            source = Paths.get(System.getProperty("user.dir").replace("build/libs", "") + "icons/placeholder.jpg");
+            String check = Paths.get(System.getProperty("user.dir")).toString();
+            if(check.contains("build/libs")) {
+                source = Paths.get(System.getProperty("user.dir").replace("build/libs", "") + "icons/placeholder.jpg");
+            } else {
+                source = Paths.get(System.getProperty("user.dir") + "/icons/placeholder.jpg");
+            }
         }
         filename = path.substring(index + 1).replaceAll(".json", "").concat("Form");
         if (path != null) {

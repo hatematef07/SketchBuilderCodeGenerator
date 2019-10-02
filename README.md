@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 - jdk 8
 - gradle build tool
-- set JAVA_HOME environment variable to you jdk path
+- set JAVA_HOME environment variable to your jdk path
 
 ### Installing
 
@@ -31,7 +31,7 @@ $ gradlew build
 ```
 - you will find the jar inside "build/libs" directory
 
-2-Using IDE:
+2- Using IDE:
 - clone the project to your device and unzip it.
 - open the project in Intellij IDE.
 - execute a jar file for the application.
