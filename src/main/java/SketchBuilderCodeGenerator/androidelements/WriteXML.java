@@ -19,7 +19,7 @@ public class WriteXML{
     private static String filename;
     private static File outputFile;
     private static String image = "placeholder.jpg";
-    private static Path source = Paths.get("icons/placeholder.jpg");
+    private static Path source;
     private static String mainDesign = "design";
     private static String guideDesign = "guideline";
     private static String OS = System.getProperty("os.name").toLowerCase();
@@ -56,8 +56,10 @@ public class WriteXML{
         int index = 0;
         if (OS.contains("win")) {
             index = path.lastIndexOf("\\");
+            source = Paths.get(System.getProperty("user.dir").replace("build\\libs", "") + "icons/placeholder.jpg");
         } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
             index = path.lastIndexOf("/");
+            source = Paths.get(System.getProperty("user.dir").replace("build/libs", "") + "icons/placeholder.jpg");
         }
         filename = path.substring(index + 1).replaceAll(".json", "");
         if (path != null) {

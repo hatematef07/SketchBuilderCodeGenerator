@@ -20,7 +20,7 @@ public class WriteCSharp {
     private static File outputFile;
     private static int tab;
     private static String image = "placeholder.jpg";
-    private static Path source = Paths.get("icons/placeholder.jpg");
+    private static Path source;
     private static final String OS = System.getProperty("os.name").toLowerCase();
 
     public WriteCSharp(String[] args) {
@@ -57,8 +57,10 @@ public class WriteCSharp {
         int index = 0;
         if (OS.contains("win")) {
             index = path.lastIndexOf("\\");
+            source = Paths.get(System.getProperty("user.dir").replace("build\\libs", "") + "icons/placeholder.jpg");
         } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
             index = path.lastIndexOf("/");
+            source = Paths.get(System.getProperty("user.dir").replace("build/libs", "") + "icons/placeholder.jpg");
         }
         filename = path.substring(index + 1).replaceAll(".json", "").concat("Form");
         if (path != null) {
